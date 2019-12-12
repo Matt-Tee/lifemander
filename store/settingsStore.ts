@@ -92,7 +92,7 @@ const hydrate = create({
 export const settingsStore = new SettingsStore();
 
 hydrate("settings", settingsStore).then(() => {
-  if (!settingsStore.players[0]) {
+  if (!settingsStore.players.length) {
     console.log("new user detected");
     settingsStore.newPlayer("blue");
     settingsStore.newPlayer("red");
