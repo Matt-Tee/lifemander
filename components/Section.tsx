@@ -10,6 +10,9 @@ interface props {
 const colors: string[] = ["blue", "red", "orange", "brown"];
 
 export default class Section extends Component<props> {
+  handlePress = () => {};
+
+  handleLongPress = () => {};
   render() {
     const { number, width } = this.props;
     return (
@@ -19,13 +22,22 @@ export default class Section extends Component<props> {
           backgroundColor: colors[number.toString()],
           width: width
         }}
+        onPress={this.handlePress}
+        onLongPress={this.handleLongPress}
       >
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <Text>{number}</Text>
         </View>
-        <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
           <SubNumber />
         </View>
       </TouchableOpacity>
