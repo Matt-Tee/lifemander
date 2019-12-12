@@ -56,7 +56,7 @@ class Player {
   }
 }
 
-class SettingsStore {
+export class SettingsStore {
   @observable
   hydrated = false;
 
