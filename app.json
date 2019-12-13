@@ -1,14 +1,20 @@
 {
   "expo": {
     "name": "Lifemander",
-    "slug": "commander-life-app",
+    "slug": "tee-softworks/lifemander",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
-      "ios",
-      "android",
-      "web"
+      "android"
     ],
+    "android": {
+      "permissions": [],
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/d20-icon.png"
+      },
+      "package":"com.teesoftworks.lifemander" 
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/d20-icon.png",
@@ -23,8 +29,6 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    }
+    "primaryColor": "#000000"
   }
 }

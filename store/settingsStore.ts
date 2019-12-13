@@ -12,14 +12,14 @@ class SubNumber {
   number = 0;
 }
 
-class Player {
+export class Player {
   @persist
   @observable
   life = 40;
 
   @persist
   @observable
-  color = "blue";
+  color = "red";
 
   @persist("list", SubNumber)
   @observable
@@ -45,12 +45,12 @@ class Player {
   }
 
   @action
-  changeLife(sign: string){
+  changeLife(sign: string, value: number){
     let life = this.life
     if(sign == '+'){
-      life = this.life + 1
+      life = this.life + value
     } else {
-      life = this.life -1
+      life = this.life - value
     }
     this.life = life
   }
@@ -69,7 +69,7 @@ export class SettingsStore {
   usedColors = [];
 
   @action
-  newPlayer(color) {
+  newPlayer(color: string) {
     this.usedColors.push(color);
     let player = new Player();
     player.color = color;
@@ -77,10 +77,8 @@ export class SettingsStore {
   }
 
   @action
-  restartGame() {
-    this.players.forEach(player => {
-      player.restartGame();
-    });
+  changeLife(index: number, sign: string, value: number){
+    this.players[index.toString()].changeLife(sign, value)
   }
 }
 
@@ -94,7 +92,7 @@ export const settingsStore = new SettingsStore();
 hydrate("settings", settingsStore).then(() => {
   if (!settingsStore.players.length) {
     console.log("new user detected");
-    settingsStore.newPlayer("blue");
+    settingsStore.newPlayer("white");
     settingsStore.newPlayer("red");
     console.log("settings initialised");
     settingsStore.hydrated = true;
