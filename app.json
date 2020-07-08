@@ -1,19 +1,17 @@
 {
   "expo": {
     "name": "Lifemander",
-    "slug": "tee-softworks/lifemander",
+    "slug": "tee-softworks-lifemander",
     "privacy": "public",
     "sdkVersion": "35.0.0",
-    "platforms": [
-      "android"
-    ],
+    "platforms": ["android"],
     "android": {
       "permissions": [],
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/d20-icon.png"
       },
-      "package":"com.teesoftworks.lifemander" 
+      "package": "com.teesoftworks.lifemander"
     },
     "version": "1.0.0",
     "orientation": "portrait",
@@ -26,9 +24,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "primaryColor": "#000000"
   }
 }
